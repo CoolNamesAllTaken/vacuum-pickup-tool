@@ -1,0 +1,28 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Amazon_Small_Buck
+F https://www.amazon.com/gp/product/B014Y3OT6Y
+$ENDCMP
+#
+$CMP Arduino_Nano_v2.x
+D Arduino Nano v2.x
+K Arduino nano microcontroller module USB
+F https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf
+$ENDCMP
+#
+$CMP Arduino_Nano_v3.x
+D Arduino Nano v3.x
+K Arduino nano microcontroller module USB
+F http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+$ENDCMP
+#
+$CMP NCE6005AS
+D Dual N-channel Power MOSFET.
+F https://datasheet.lcsc.com/szlcsc/Wuxi-NCE-Power-Semiconductor-NCE6005AS_C126151.pdf
+$ENDCMP
+#
+$CMP PIC16F15356
+D 8-bit PIC Microcontroller.
+$ENDCMP
+#
+#End Doc Library

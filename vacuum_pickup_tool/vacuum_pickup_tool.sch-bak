@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:vacuum_pickup_tool-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -34,6 +33,7 @@ F 0 "U2" H 7056 2246 50  0000 L CNN
 F 1 "NCE6005AS" H 7056 2155 50  0000 L CNN
 F 2 "lib_fp:SOP-8_3.76x4.96mm_P1.27mm" H 7100 2200 50  0001 C CNN
 F 3 "" H 7100 2200 50  0001 C CNN
+F 4 "NCE6005AS" H 6950 2200 50  0001 C CNN "MPN"
 	2    6950 2200
 	1    0    0    -1  
 $EndComp
@@ -172,7 +172,7 @@ P 1350 4000
 F 0 "J1" H 1407 4325 50  0000 C CNN
 F 1 "Barrel_Jack" H 1407 4234 50  0000 C CNN
 F 2 "lib_fp:SOFNG_DC005-T20" H 1400 3960 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/SOFNG-DC-050-T20_C114916.pdf" H 1400 3960 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908270930_Boom-Precision-Elec-DC-005-5-5-2-0MM_C16214.pdf" H 1400 3960 50  0001 C CNN
 F 4 "DC005-T20" H 1350 4000 50  0001 C CNN "MPN"
 	1    1350 4000
 	1    0    0    -1  

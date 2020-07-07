@@ -74,7 +74,6 @@ Wire Wire Line
 	5150 1500 5300 1500
 Wire Wire Line
 	5300 1500 5300 1550
-Connection ~ 5150 1500
 Text Label 4300 2200 0    50   ~ 0
 VALVE_CTRL
 Wire Wire Line
@@ -86,24 +85,18 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x02_Male J3
 U 1 1 5D61FC05
-P 4900 1650
-F 0 "J3" H 4800 1650 50  0000 C CNN
-F 1 "JST_PH_01x02_Male" H 4500 1550 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" H 4900 1650 50  0001 C CNN
-F 3 "~" H 4900 1650 50  0001 C CNN
-F 4 "B2B-PH-K-S(LF)(SN)" H 4900 1650 50  0001 C CNN "MPN"
-	1    4900 1650
+P 4700 1800
+F 0 "J3" H 4600 1800 50  0000 C CNN
+F 1 "JST_PH_01x02_Male" H 4300 1700 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" H 4700 1800 50  0001 C CNN
+F 3 "~" H 4700 1800 50  0001 C CNN
+F 4 "B2B-PH-K-S(LF)(SN)" H 4700 1800 50  0001 C CNN "MPN"
+	1    4700 1800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 1650 5150 1650
-Wire Wire Line
-	5150 1500 5150 1650
-Wire Wire Line
-	5100 1750 5150 1750
-Wire Wire Line
-	5150 1750 5150 1900
-Text Notes 4500 1550 0    50   ~ 0
+	4900 1900 5050 1900
+Text Notes 4350 1400 0    50   ~ 0
 Valve Solenoid
 $Comp
 L power:GND #PWR012
@@ -211,13 +204,13 @@ Wire Wire Line
 Text Notes 5350 1250 0    100  ~ 0
 Power Switching
 Wire Notes Line
-	4050 1050 4050 2750
+	3850 1050 3850 2750
 Wire Notes Line
-	4050 2750 7650 2750
+	3850 2750 7650 2750
 Wire Notes Line
 	7650 2750 7650 1050
 Wire Notes Line
-	7650 1050 4050 1050
+	7650 1050 3850 1050
 $Comp
 L Connector:AudioJack3 J2
 U 1 1 5D6780D2
@@ -421,12 +414,7 @@ F 3 "" H 4750 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 3750 4750 3750
-Wire Wire Line
-	4750 3750 4750 3950
-Wire Wire Line
 	4650 3950 4750 3950
-Connection ~ 4750 3950
 Wire Wire Line
 	4750 3950 4750 4000
 Text Label 5700 3850 2    50   ~ 0
@@ -700,4 +688,36 @@ Wire Wire Line
 	5050 4250 5050 4200
 Wire Wire Line
 	5050 3850 5050 3900
+NoConn ~ 4650 3750
+$Comp
+L Connector:Conn_01x02_Male J?
+U 1 1 5D7FA28E
+P 4700 1550
+F 0 "J?" H 4600 1550 50  0000 C CNN
+F 1 "JST_PH_01x02_Male" H 4300 1450 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" H 4700 1550 50  0001 C CNN
+F 3 "~" H 4700 1550 50  0001 C CNN
+F 4 "B2B-PH-K-S(LF)(SN)" H 4700 1550 50  0001 C CNN "MPN"
+	1    4700 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 1650 5050 1650
+Wire Wire Line
+	5050 1650 5050 1900
+Connection ~ 5050 1900
+Wire Wire Line
+	5050 1900 5150 1900
+Wire Wire Line
+	4900 1550 4950 1550
+Wire Wire Line
+	4950 1550 4950 1800
+Wire Wire Line
+	4900 1800 4950 1800
+Connection ~ 4950 1800
+Wire Wire Line
+	4950 1800 5150 1800
+Connection ~ 5150 1500
+Wire Wire Line
+	5150 1500 5150 1800
 $EndSCHEMATC

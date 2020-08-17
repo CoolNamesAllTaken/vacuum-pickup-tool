@@ -1,6 +1,8 @@
 # vacuum-pickup-tool
 Vacuum pickup tool for building SMT boards.
 
+![Image of fully assembled system](images/pickup_tool.jpg)
+
 ## Overview and Description
 The Vacuum Pickup Tool is designed to facilitate manual pick-and-place of SMD components onto PCBs, offering faster cycle time than tweezers, since components can be picked directly from their tape.
 It consists of a 3d printed case (powered by a 12V barrel jack), a foot pedal (connected to the case by way of a 3.5mm audio cable), and the tool itself (connected to the case by a PVC vacuum tubing).
@@ -29,34 +31,37 @@ The pictures are of an older version of this tool, which has a slightly differen
 ## Step 1: Assemble and mount the PCB:
 1. Solder all surface mount componenets. In general, going from smallest to largest is advisable so you don't have larger componenets blocking your iron's access to smaller nearby pads.
 Keep in mind that diodes and LEDs have polarity! Refer to the pictures or the schematic to see the correct orientation.
-2. Solder the male 2pos JST connectors to the board, as well as the barrel jack. Be careful that the JST connectors are in the correct orientation (i.e. the red wire crimped in the female will correspond with the positive side when they are connected.)
+2. Solder the male 2pos JST-PH connectors to the board, as well as the barrel jack. Be careful that the JST connectors are in the correct orientation (i.e. the red wire crimped in the female will correspond with the positive side when they are connected.)
 3. Set the voltage output of the regulator. We used a bench power supply with alligator clips to supply 12V and a voltmeter with alligator clip leads to read the output voltage. Turn the on-board screw until the output is 5V. It is important to do this before the regulator and the Nano are soldered to the PCB, otherwise the regulator may provide a voltage that fries the Nano's 5V-tolerant pins before it is properly tuned.
 4. Solder male headers on the Nano and the regulator. The easist way to get the headers straight up and aligned on the Nano is to place them in a breadboard. This will NOT work for the regulator, as the distances between its holes are inconsistent with a breadboard's.
 5. Solder the Nano and regulator to the board.
 6. Mount the PCB to the case with four M3 screws and nuts.
+![Completed PCB](images/pcb.jpg)
 
-## Step 2: Connect the compressor and solenoids:
-1. Crimp and affix a female 2pos JST connector to the leads of the compressor. A PA-09 crimper can be used for this.
-2. Crimp and affix a female 2pos JST connector to the leads of each solenoid.
-3. Remove the red "hats" from the compressor.
-4. Use 2 short M4 screws to affix the compressor to the top plate of the case.
+## Step 2: Connect the vacuum pump and solenoids:
+1. Crimp and affix a female 2pos JST-PH connector to the leads of the vacuum pump. An Engineer PA-09 crimper can be used for this.
+2. Crimp and affix a female 2pos JST-PH connector to the leads of each solenoid.
+3. Remove the red "hats" from the vacuum pump.
+4. Use two short M4 screws to affix the vacuum pump to the top plate of the case.
 5. Place one square nut in each of the slots in each top corner of the case. 
-6. Screw in a Push-to-Connect Tube Fitting to each of the 3 holes in the larger solenoid valve. Use a wrench to get them tight, but it is normal for 3ish threads to still extend outside of the hole when it is fully in.
-9. Using the tubing and a T-bar, connect the tubing as shown in the pictures. Leave enough "slack" so that the top (to which the compressor is attached) can be removed without disconnecting the tubing.
+6. Screw in a Push-to-Connect Tube Fitting to each of the three holes in the larger solenoid valve. Use a wrench to get them tight, but it is normal for 3ish threads to still extend outside of the hole when it is fully in.
+9. Using the tubing and a T-fitting, connect the tubing as shown in the pictures. Leave enough "slack" so that the top (to which the vacuum pump is attached) can be removed without disconnecting the tubing.
 8. Use 2 short M4 screws to affix the large solenoid to the bottom of the case.
 9. Use a zip tie and a zip tie mount to affix the small solenoid to the bottom of the case.
 10. Plug the female JST connectors into the PCB.
+![Vacuum pump and solenoids installed](images/air_routing.jpg)
 
 ## Step 3: Construct and connect the "pencil":
 1. Cut the aluminum tube in half, since we want a 6in length. One way to cut it is by placing half in a vise and cutting with a hacksaw, then deburring and filing the rough edges.
 2. Cut a long length of the vinyl tubing and feed it through the aluiminum tube.
-3. Attach the Luer Lock adapter, and use Kapton tape to slightly increase the diameter of the front of the tube until it makes a nice press fit into the tube.
+3. Attach the Luer Lock adapter, and use Kapton tape to slightly increase the diameter of the front of the tube (over the Luer Lock adapter barb) until it makes a nice press fit into the tube.
+![Partially assembled pencil, showing Kapton tape that will create a press fit against the aluminum tube](images/pencil.jpg)
 
 ## Step 4: Wire the foot pedal
 1. Chop off the connector from one end of the 3.5mm audio cable. Strip ~1in of the outer cable insulation and ~0.3in of the insulation on each of the 3 inner cables.
 2. Use a multimeter to map each internal cable to the sleeve, ring, and tip of the other end's connector. Chop off the wire corresponding to the sleeve; it is unneeded.
 3. Unscrew the two side screws of the foot pedal to separate the two main pieces. Take out the plastic insert protecting the internal limit switch.
-4. Loosen the two back screws to allow the cable through. Of the two remaining wires, solder one to the Common terminal of the limit switch, and the other to the Normally Open (NO) terminal. It may help to remove the limit switch when doing this.
+4. Loosen the two back screws to allow the cable through. Of the two remaining wires, solder one to the Common terminal of the limit switch, and the other to the Normally Open (NO) terminal. It may help to remove the limit switch when doing this. If you have the correct size of quick-connect spade terminals, these could be used to attach wires to the switch instead of soldering.
 5. Replace the protective plastic, tighten the two back screws to provide strain relief on the incoming cable, then reattach the sides to each other with the side screws.
 
 ## Step 5: Build and flash the code:
@@ -69,4 +74,4 @@ Keep in mind that diodes and LEDs have polarity! Refer to the pictures or the sc
 ## Step 6: Putting it all together:
 1. Plug in the 12V power, the audio cable, and the tubing from the "pencil".
 2. When the power is inserted, red LEDs should be on inside the case. When the foot pedal is depressed, the vacuum will activate and a green LED should show inside the case.
-3. After releasing the foot pedal, the green LED will turn off but the compressor will remain on for a short period of time, so that if you're picking multiple parts in quick succession you don't have to wait for it to start up each time.
+3. After releasing the foot pedal, the green LED will turn off but the vacuum pump will remain on for a short period of time, so that if you're picking multiple parts in quick succession you don't have to wait for it to start up each time.
